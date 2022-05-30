@@ -15,7 +15,11 @@ export const GithubContextProvider  = ({children}) => {
 
     const [state, dispatch] = useReducer(githubReducer, initialState)
     const setLoading = () => dispatch({type: 'SET_LOADING'})
-
+    const clearUsers =() => {
+        dispatch({
+            type : 'CLEAR_USERS'
+        })
+    }
 
 const searchUsers = async (text) => {
 
@@ -25,7 +29,7 @@ const searchUsers = async (text) => {
         q : text
     })
     const response = await fetch(`https://api.github.com/search/users?${params}`)
-    console.log(response)
+    
     const { items } = await response.json()
     
 
@@ -35,7 +39,6 @@ const searchUsers = async (text) => {
         payload : items,
     })
 
-    console.log(text)
 }
 
     return <GithubContext.Provider
@@ -43,7 +46,8 @@ const searchUsers = async (text) => {
             {
                 loading : state.loading,
                 users : state.users,
-                searchUsers
+                searchUsers,
+                clearUsers,
             }
         }
     >
