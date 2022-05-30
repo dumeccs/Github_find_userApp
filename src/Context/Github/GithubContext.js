@@ -24,14 +24,18 @@ const searchUsers = async (text) => {
     const params = new URLSearchParams({
         q : text
     })
-    const response = await fetch(`https://api.github.com/search/users/${params}`)
-
+    const response = await fetch(`https://api.github.com/search/users?${params}`)
+    console.log(response)
     const { items } = await response.json()
+    
+
 
     dispatch({
         type : 'GET_USERS',
         payload : items,
     })
+
+    console.log(text)
 }
 
     return <GithubContext.Provider

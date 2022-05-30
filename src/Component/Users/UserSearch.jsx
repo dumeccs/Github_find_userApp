@@ -5,7 +5,7 @@ const UserSearch = () => {
     const [text, setText] = useState('')
 
         const {users , searchUsers} = useContext(GithubContext)
-
+    
 
     const handleChange = (e) => setText(e.target.value)
     const handleSubmit = (e) => {
@@ -28,13 +28,13 @@ const UserSearch = () => {
                        <div className="form-control">
                             <div className="relative">
                                     <input type="text"
-                                    value={text}
+                                    value = {text}
                                     onChange = {handleChange}
                                     className='w-full pr-40 bg-gray-200
                                     input input-lg text-black'
                                     placeholder='Search'
 
-    />
+                                                            />
 
                                     <button 
                                          type='submit'

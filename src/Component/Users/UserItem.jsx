@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import GithubContext from '../../Context/Github/GithubContext';
-import { useContext } from 'react';
+// import GithubContext from '../../Context/Github/GithubContext';
+// import { useContext } from 'react';
 
 
 const UserItem = ({user}) => {
+    
   return (
     <div className='card shadow-md compact side bg-base-100'
         >

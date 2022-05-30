@@ -6,8 +6,6 @@ import GithubContext from '../../Context/Github/GithubContext'
 function UserResults() {
 const {loading, users} =  useContext(GithubContext)
 
-
-
 if(!loading){
     return (
         <div className="grid grid-cols-1 gap-8 
