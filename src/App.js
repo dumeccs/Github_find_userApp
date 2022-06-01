@@ -5,14 +5,21 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Notfound from "./Pages/Notfound";
 import { GithubContextProvider } from "./Context/Github/GithubContext";
+import { AlertProvider } from "./Context/Alert/AlertReducers/AlertContext";
+import Alert from "./Component/Layout/Alert";
+
 function App() {
   return (
   <GithubContextProvider>
-        <Router>
+    <AlertProvider>
+     <Router>
       <div >
           <div className="flex flex-col justify-between h-screen">
+            
             <Navbar />
+
             <main className="container mx-auto px-3 pb-12">
+            <Alert />
               <Routes>
                  <Route path="/" element={<Home/>} />
                 <Route path="/about" element={<About/>} />
@@ -22,9 +29,9 @@ function App() {
             </main>
             <Footer />
           </div>
-
       </div>
-  </Router>
+    </Router>
+  </AlertProvider>
   </GithubContextProvider>
   
    
