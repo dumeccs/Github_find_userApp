@@ -12,12 +12,18 @@ const Alert = () => {
                 fill='none'
                 viewBox='0 0 24 24'
                 >
-                    <circle cx='12' cy='12' r='12'>
-
+                    <circle cx='12' cy='12' r='12' fill='#FECDD3'>
+                        <path 
+                            d='M8 8l8 8M16 8l-8 8'
+                            stroke ='#B91C1C'
+                            strokeWidth='2'>
+                        </path>
                     </circle>
-
                 </svg>
             )}
+            <strong className='flex-1 text-base font-semibold leading-7 text-white'>
+                        {alert.msg}
+            </strong>
       </p>
   )
 }
